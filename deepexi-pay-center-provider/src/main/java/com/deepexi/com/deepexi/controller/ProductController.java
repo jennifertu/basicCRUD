@@ -66,6 +66,17 @@ public class ProductController {
         return product;
     }
 
+
+    // 用MYBATIS自制的方法
+    @PUT
+    @Path("/update")
+    public Payload updateProductByIdDefault(Product product){
+        productService.updateProductByIdDefault(product);
+        System.out.println("you have updated "+ product.getId());
+        return new Payload<>(productService.updateProductByIdDefault(product));
+    }
+
+
     @GET
     @Path("/detail")
     public Payload getProductById(@QueryParam("id") String id){
@@ -95,6 +106,24 @@ public class ProductController {
         List<Product> products = productService.selectByWrapperAlleq(name,price);
         return products;
     }
+
+    @GET
+    @Path("/selectByIdDefault")
+    public Product selectByIdDefault(@QueryParam("id")String id){
+        return productService.selectByIdDefault(id);
+    }
+
+
+    @GET
+    @Path("/selectByPrice")
+    public List<Product> selectByDescPrice(){
+        List<Product> products = productService.selectByDescPrice();
+        return products;
+    }
+
+
+
+
 
 
 

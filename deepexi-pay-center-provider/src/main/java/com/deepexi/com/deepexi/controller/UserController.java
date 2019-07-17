@@ -32,7 +32,7 @@ public class UserController {
     private ProductOrderService productOrderService;
 
     @POST
-    @Path("/create")
+    @Path("/createOrder")
     public int createOrder(Product product){
         int createNum = productOrderService.createOrder(product);
         System.out.println("we have created" + createNum + "order");

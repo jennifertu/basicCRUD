@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/deepexi-pay-center.iml" filepath="$PROJECT_DIR$/deepexi-pay-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deepexi-pay-center-api/deepexi-pay-center-api.iml" filepath="$PROJECT_DIR$/deepexi-pay-center-api/deepexi-pay-center-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deepexi-pay-center-provider/deepexi-pay-center-provider.iml" filepath="$PROJECT_DIR$/deepexi-pay-center-provider/deepexi-pay-center-provider.iml" />
+    </modules>
+  </component>
+</project>

@@ -28,4 +28,10 @@ public interface ProductService {
     List<Product> condition(String name, Integer price);
 
     List<Product> selectByWrapperAlleq(String name, Integer price);
+
+    Integer updateProductByIdDefault(Product product);
+
+    Product selectByIdDefault(String id);
+
+    List<Product> selectByDescPrice();
 }

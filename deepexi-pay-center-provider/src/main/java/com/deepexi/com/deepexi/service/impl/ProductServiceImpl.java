@@ -3,6 +3,7 @@ package com.deepexi.com.deepexi.service.impl;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.RpcContext;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.deepexi.com.deepexi.enums.ResultEnum;
 import com.deepexi.com.deepexi.service.ProductService;
@@ -63,6 +64,9 @@ public class ProductServiceImpl implements ProductService {
         return productMapper.updateById1(product);
     }
 
+
+
+
     @Override
     @SentinelResource(value = "testSentinel", fallback = "doFallback", blockHandler = "exceptionHandler")
     public Product getProductById(String id) {
@@ -91,6 +95,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> selectByWrapperAlleq(String name, Integer price) {
         QueryWrapper<Product> queryWrapper =  new QueryWrapper<Product>();
+
         Map<String,Object> params =  new HashMap<>();
         params.put("name",name);
         params.put("price",price);
@@ -98,6 +103,22 @@ public class ProductServiceImpl implements ProductService {
         //this selectlist method is defined by myBatis
         List<Product> productList =productMapper.selectList(queryWrapper);
         return productList;
+    }
+
+    @Override
+    public Integer updateProductByIdDefault(Product product) {
+        //this is default way in myBatis
+        return productMapper.updateById(product);
+    }
+
+    @Override
+    public Product selectByIdDefault(String id) {
+        return productMapper.selectById(id);
+    }
+
+    @Override
+    public List<Product> selectByDescPrice() {
+        return productMapper.selectList(new QueryWrapper<Product>().orderByDesc("price"));
     }
 
 

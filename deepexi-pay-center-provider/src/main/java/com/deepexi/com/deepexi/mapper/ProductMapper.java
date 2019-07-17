@@ -20,20 +20,21 @@ public interface ProductMapper extends BaseMapper<Product> {
     /**
      * 通过商品id集合批量查询商品信息
      *
-     * @param spcProductDto
+//     * @param spcProductDto
      * @return
      */
-    List<ProductDto> getProductInfoByIds(@Param("list") List<ProductDto> spcProductDto);
+//    List<ProductDto> getProductInfoByIds(@Param("list") List<ProductDto> spcProductDto);
+//
+//    /**
+//     * 查询所有商品信息
+//     *
+//     * @return
+//     */
+//    List<ProductDto> findProductInfo();
+//
+//    List<Product> selectPage(@Param("price") Integer price);
 
-    /**
-     * 查询所有商品信息
-     *
-     * @return
-     */
-    List<ProductDto> findProductInfo();
-
-    List<Product> selectPage(@Param("price") Integer price);
-
+    //返回类似于这个名字的product
     List<Product> selectList1(@Param("name") String name);
 
 

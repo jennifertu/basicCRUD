@@ -1,25 +1,18 @@
 package com.deepexi.com.deepexi.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.deepexi.com.deepexi.domain.dto.ProductDto;
+import com.deepexi.com.deepexi.domain.dto.DeliveryDto;
 import com.deepexi.com.deepexi.domain.eo.Product;
 import com.deepexi.com.deepexi.service.ProductService;
-import com.deepexi.util.StringUtil;
 import com.deepexi.util.config.Payload;
 import com.deepexi.util.constant.ContentType;
 import io.swagger.annotations.*;
 import org.apache.commons.lang3.StringUtils;
-import org.jboss.resteasy.annotations.Form;
-import org.omg.CORBA.portable.ApplicationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.ws.rs.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author jennifertu1014
@@ -120,6 +113,15 @@ public class ProductController {
         List<Product> products = productService.selectByDescPrice();
         return products;
     }
+
+    @GET
+    @Path("/selectDelieveriesByProduct")
+    //实现多表联查，三表
+    public List<DeliveryDto> selectDeliveriesByProductId(@QueryParam("id")String id){
+
+
+    }
+
 
 
 

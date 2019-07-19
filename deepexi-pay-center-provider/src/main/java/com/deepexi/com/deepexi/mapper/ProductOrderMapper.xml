@@ -5,5 +5,31 @@
 <mapper namespace="com.deepexi.com.deepexi.mapper.ProductOrderMapper">
 
 
+    <insert id="createOrder">
+        INSERT INTO `order`
+        (`id`,
+        `user_name`,
+        `entity`,
+        `productId`,
+        `total_price` )
+        VALUE(#{order.id}, #{order.userName}, #{order.entity}, #{order.productId},
+        (select price from `product` where id = #{order.productId}) *  (#{order.entity}) );
+
+    </insert>
+
+
+    <select id="selectOrder" resultType="com.deepexi.com.deepexi.domain.eo.Order">
+
+      select user_name , entity, total_price, productId
+      from `order`
+      where user_name = #{user};
+
+    </select>
+
+
+
+
+
+
 
 </mapper>

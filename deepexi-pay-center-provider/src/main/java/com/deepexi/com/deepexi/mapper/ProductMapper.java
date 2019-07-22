@@ -1,6 +1,7 @@
 package com.deepexi.com.deepexi.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.deepexi.com.deepexi.domain.dto.DeliveryDto;
 import com.deepexi.com.deepexi.domain.dto.ProductDto;
 import com.deepexi.com.deepexi.domain.eo.Product;
 import org.apache.ibatis.annotations.Mapper;
@@ -41,7 +42,5 @@ public interface ProductMapper extends BaseMapper<Product> {
     Integer updateById1(@Param("product") Product product);
 
 
-
-
-
+    List<DeliveryDto> findAllDeliveriesByProductId(@Param("id") String id);
 }

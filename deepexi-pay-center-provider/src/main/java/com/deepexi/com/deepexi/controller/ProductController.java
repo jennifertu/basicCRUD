@@ -115,12 +115,18 @@ public class ProductController {
     }
 
     @GET
-    @Path("/selectDelieveriesByProduct")
+    @Path("/findDelieveriesByProduct")
     //实现多表联查，三表
-    public List<DeliveryDto> selectDeliveriesByProductId(@QueryParam("id")String id){
-
+    public List<DeliveryDto> findAllDeliveriesByProductId(@QueryParam("id")String id){
+        List<DeliveryDto> deliveries = productService.findAllDeliveriesByProductId(id);
+        return deliveries;
 
     }
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package com.deepexi.com.deepexi.service;
 
+import com.deepexi.com.deepexi.domain.dto.DeliveryDto;
 import com.deepexi.util.extension.ApplicationException;
 import com.deepexi.util.pageHelper.PageBean;
 import com.deepexi.com.deepexi.domain.eo.Product;
@@ -34,4 +35,6 @@ public interface ProductService {
     Product selectByIdDefault(String id);
 
     List<Product> selectByDescPrice();
+
+    List<DeliveryDto> findAllDeliveriesByProductId(String id);
 }

@@ -12,4 +12,6 @@
       (#{delivery.customerId} , #{delivery.id} , #{delivery.address} , #{delivery.telephone} ,'0');
 
     </insert>
+
+
 </mapper>

@@ -26,6 +26,15 @@
     </update>
 
 
+    <select id="findAllDeliveriesByProductId" resultType="com.deepexi.com.deepexi.domain.dto.DeliveryDto">
+
+        SELECT p.id , p.name , o.user_name , o.total_price , oD.address, oD.telephone
+        from product p, orders o, orderDetails oD
+        where p.id = #{id}
+        and p.id = o.productId
+        and o.id = oD.customer_id
+    </select>
+
 </mapper>
 
 

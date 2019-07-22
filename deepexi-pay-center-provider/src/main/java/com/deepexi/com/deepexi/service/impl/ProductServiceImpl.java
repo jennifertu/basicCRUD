@@ -5,6 +5,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.deepexi.com.deepexi.domain.dto.DeliveryDto;
 import com.deepexi.com.deepexi.enums.ResultEnum;
 import com.deepexi.com.deepexi.service.ProductService;
 import com.deepexi.com.deepexi.domain.eo.Product;
@@ -119,6 +120,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> selectByDescPrice() {
         return productMapper.selectList(new QueryWrapper<Product>().orderByDesc("price"));
+    }
+
+    @Override
+    public List<DeliveryDto> findAllDeliveriesByProductId(String id) {
+        return productMapper.findAllDeliveriesByProductId(id);
     }
 
 
